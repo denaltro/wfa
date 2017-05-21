@@ -41,6 +41,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -106,6 +108,7 @@
             this.button_delete.TabIndex = 3;
             this.button_delete.Text = "Удалить";
             this.button_delete.UseVisualStyleBackColor = true;
+            this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
             // 
             // ImplementersForm
             // 
@@ -118,7 +121,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "ImplementersForm";
             this.Text = "Исполнители";
-            this.Load += new System.EventHandler(this.ImplementersForm_Load);
+            this.Activated += new System.EventHandler(this.ImplementersForm_Activated);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

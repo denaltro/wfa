@@ -19,6 +19,19 @@ namespace Diplom
             InitializeComponent();
         }
 
+        private void ImplementersForm_Load(object sender, EventArgs e)
+        {
+            var implementers = MongoRepositoryImplementers.GetAll();
+            foreach (var imp in implementers)
+            {
+                dataGridView1.Rows.Add(imp.Id, imp.ContactName, imp.Name, imp.Phone);
+            }
+
+            //var bindingList = new BindingList<Implementer>(implementers);
+            //var source = new BindingSource(bindingList, null);
+            //dataGridView1.DataSource = source;
+        }
+
         private void button_add_Click(object sender, EventArgs e)
         {
             new ImplementerForm().ShowDialog();
@@ -26,15 +39,36 @@ namespace Diplom
 
         private void button_update_Click(object sender, EventArgs e)
         {
-            new ImplementerForm().ShowDialog();
+            var selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
+            var selectedRow = dataGridView1.Rows[selectedrowindex];
+            var id = Guid.Parse(selectedRow.Cells["Id"].Value.ToString());
+            var imp = MongoRepositoryImplementers.Get(id);
+            new ImplementerForm(imp).ShowDialog();
         }
 
-        private void ImplementersForm_Load(object sender, EventArgs e)
+        private void button_delete_Click(object sender, EventArgs e)
         {
+            var selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
+            var selectedRow = dataGridView1.Rows[selectedrowindex];
+            var id = Guid.Parse(selectedRow.Cells["Id"].Value.ToString());
+            MongoRepositoryImplementers.Remove(id);
+            dataGridView1.Rows.Remove(selectedRow);
+            dataGridView1.Refresh();
+        }
+
+        private void ImplementersForm_Activated(object sender, EventArgs e)
+        {
+            RefreshForm();
+        }
+
+        private void RefreshForm()
+        {
+            dataGridView1.Rows.Clear();
             var implementers = MongoRepositoryImplementers.GetAll();
-            var bindingList = new BindingList<Implementer>(implementers);
-            var source = new BindingSource(bindingList, null);
-            dataGridView1.DataSource = source;
+            foreach (var imp in implementers)
+            {
+                dataGridView1.Rows.Add(imp.Id, imp.Name, imp.ContactName, imp.Phone);
+            }
         }
     }
 }

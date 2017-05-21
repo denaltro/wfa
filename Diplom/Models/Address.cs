@@ -31,6 +31,6 @@ namespace Diplom.Models
         /// <summary>
         /// Список проживающих людей
         /// </summary>
-        public List<People> People { get; set; }
+        public List<Guid> People { get; set; }
     }
 }

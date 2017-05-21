@@ -45,24 +45,24 @@ namespace Diplom
 
         private void DGVBind()
         {
-            dataGridView1.Rows.Clear();
-            dataGridView1.Columns.Add("Street", "Улица");
-            dataGridView1.Columns.Add("House", "Дом");
-            dataGridView1.Columns.Add("Building", "Строение");
-            dataGridView1.Columns.Add("Apartment", "Квартира");
-            dataGridView1.Columns.Add("LastName", "Фамилия");
-            dataGridView1.Columns.Add("FirstName", "Имя");
-            dataGridView1.Columns.Add("SurName", "Отчество");
-            dataGridView1.Columns.Add("Phone", "Телефон");
+            //dataGridView1.Rows.Clear();
+            //dataGridView1.Columns.Add("Street", "Улица");
+            //dataGridView1.Columns.Add("House", "Дом");
+            //dataGridView1.Columns.Add("Building", "Строение");
+            //dataGridView1.Columns.Add("Apartment", "Квартира");
+            //dataGridView1.Columns.Add("LastName", "Фамилия");
+            //dataGridView1.Columns.Add("FirstName", "Имя");
+            //dataGridView1.Columns.Add("SurName", "Отчество");
+            //dataGridView1.Columns.Add("Phone", "Телефон");
 
-            var addresses = MongoRepositoryAddresses.GetAll();
-            foreach (var address in addresses)
-            {
-                foreach (var item in address.People)
-                {
-                    dataGridView1.Rows.Add(address.Street, address.House, address.Building, address.Apartment, item.LastName, item.FirstName, item.SurName, item.Phone);
-                }
-            }
+            //var addresses = MongoRepositoryAddresses.GetAll();
+            //foreach (var address in addresses)
+            //{
+            //    foreach (var item in address.People)
+            //    {
+            //        dataGridView1.Rows.Add(address.Street, address.House, address.Building, address.Apartment, item.LastName, item.FirstName, item.SurName, item.Phone);
+            //    }
+            //}
         }
     }
 }

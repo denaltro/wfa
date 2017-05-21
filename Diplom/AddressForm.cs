@@ -21,30 +21,30 @@ namespace Diplom
 
         private void button_ok_Click(object sender, EventArgs e)
         {
-            var address = new Address
-            {
-                Id = Guid.NewGuid(),
-                Street = textBox_street.Text,
-                House = textBox_house.Text,
-                Building = textBox_biulding.Text,
-                Apartment = textBox_apartment.Text,
-                People = new List<People>()
-            };
+            //var address = new Address
+            //{
+            //    Id = Guid.NewGuid(),
+            //    Street = textBox_street.Text,
+            //    House = textBox_house.Text,
+            //    Building = textBox_biulding.Text,
+            //    Apartment = textBox_apartment.Text,
+            //    People = new List<Guid>()
+            //};
 
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                var item = new People
-                {
-                    LastName = row.Cells[0].Value.ToString(),
-                    FirstName = row.Cells[1].Value.ToString(),
-                    SurName = row.Cells[2].Value.ToString(),
-                    Phone = row.Cells[3].Value.ToString()
-                };
-                address.People.Add(item);
-            }
+            //foreach (DataGridViewRow row in dataGridView1.Rows)
+            //{
+            //    var item = new People
+            //    {
+            //        LastName = row.Cells[0].Value.ToString(),
+            //        FirstName = row.Cells[1].Value.ToString(),
+            //        SurName = row.Cells[2].Value.ToString(),
+            //        Phone = row.Cells[3].Value.ToString()
+            //    };
+            //    address.People.Add(item);
+            //}
 
 
-            MongoRepositoryAddresses.Add(address);
+            //MongoRepositoryAddresses.Add(address);
             Close();
         }
 
