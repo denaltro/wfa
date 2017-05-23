@@ -4,7 +4,7 @@ using System.Diagnostics;
 namespace Diplom.Models
 {
     /// <summary>
-    /// 
+    /// Событие
     /// </summary>
     public class OrgEvent
     {
@@ -15,11 +15,11 @@ namespace Diplom.Models
         /// <summary>
         /// Адрес
         /// </summary>
-        public Guid Address { get; set; }
+        public Guid AddressId { get; set; }
         /// <summary>
         /// Тип счетчика
         /// </summary>
-        public CounterType Type { get; set; }
+        public CounterType CounterType { get; set; }
         /// <summary>
         /// Место установки
         /// </summary>
@@ -32,7 +32,9 @@ namespace Diplom.Models
         /// Идентификатор исполнителя
         /// </summary>
         public Guid ImplementerId { get; set; }
-
+        /// <summary>
+        /// Тип события
+        /// </summary>
         public EventType EventType { get; set; }
     }
 

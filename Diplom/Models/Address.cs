@@ -28,9 +28,5 @@ namespace Diplom.Models
         /// Квартира
         /// </summary>
         public string Apartment { get; set; }
-        /// <summary>
-        /// Список проживающих людей
-        /// </summary>
-        public List<Guid> People { get; set; }
     }
 }

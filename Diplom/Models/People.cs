@@ -27,5 +27,9 @@ namespace Diplom.Models
         /// Телефон
         /// </summary>
         public string Phone { get; set; }
+        /// <summary>
+        /// Идентификатор адреса
+        /// </summary>
+        public Guid AddressId { get; set; }
     }
 }

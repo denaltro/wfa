@@ -40,29 +40,84 @@ namespace Diplom
 
         private void MainForm_Activated(object sender, EventArgs e)
         {
-            DGVBind();
+            dataGridView1.Rows.Clear();
+            var eventList = MongoRepositoryOrgEvent.GetAll();
+            var addressList = MongoRepositoryAddresses.GetAll();
+            var implementers = MongoRepositoryImplementers.GetAll();
+
+            foreach (var orgEvent in eventList)
+            {
+                var address = addressList.First(w => w.Id == orgEvent.AddressId);
+                var addressString = string.Join(", ", new List<string> { address.Street, address.House, address.Building, address.Apartment });
+
+                var implementer = implementers.First(a => a.Id == orgEvent.ImplementerId).Name;
+
+                var counterType = String.Empty;
+                switch (orgEvent.CounterType)
+                {
+                    case Models.CounterType.COLD:
+                        counterType = "Холодная вода";
+                        break;
+                    case Models.CounterType.HOT:
+                        counterType = "Горячая вода";
+                        break;
+                    case Models.CounterType.ELECTRO:
+                        counterType = "Электрический";
+                        break;
+                }
+
+                var eventType = string.Empty;
+                switch (orgEvent.EventType)
+                {
+                    case Models.EventType.INSTALL:
+                        eventType = "Установка";
+                        break;
+                    case Models.EventType.REINSTALL:
+                        eventType = "Переустановка";
+                        break;
+                    case Models.EventType.VERIFICATION:
+                        eventType = "Поверка";
+                        break;
+                }
+
+                dataGridView1.Rows.Add(orgEvent.Id, orgEvent.AddressId, addressString, counterType, orgEvent.Place, orgEvent.Date, implementer, eventType);
+            }
         }
 
-        private void DGVBind()
-        {
-            //dataGridView1.Rows.Clear();
-            //dataGridView1.Columns.Add("Street", "Улица");
-            //dataGridView1.Columns.Add("House", "Дом");
-            //dataGridView1.Columns.Add("Building", "Строение");
-            //dataGridView1.Columns.Add("Apartment", "Квартира");
-            //dataGridView1.Columns.Add("LastName", "Фамилия");
-            //dataGridView1.Columns.Add("FirstName", "Имя");
-            //dataGridView1.Columns.Add("SurName", "Отчество");
-            //dataGridView1.Columns.Add("Phone", "Телефон");
 
-            //var addresses = MongoRepositoryAddresses.GetAll();
-            //foreach (var address in addresses)
-            //{
-            //    foreach (var item in address.People)
-            //    {
-            //        dataGridView1.Rows.Add(address.Street, address.House, address.Building, address.Apartment, item.LastName, item.FirstName, item.SurName, item.Phone);
-            //    }
-            //}
+        private void button_add_Click(object sender, EventArgs e)
+        {
+            new OrgEventForm().ShowDialog();
+        }
+
+        private void button_update_Click(object sender, EventArgs e)
+        {
+            int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
+            string a = selectedRow.Cells["Id"].Value.ToString();
+            var orgEvent = MongoRepositoryOrgEvent.Get(Guid.Parse(a));
+
+            Address address = null;
+            if (orgEvent != null)
+            {
+                address = MongoRepositoryAddresses.Get(orgEvent.AddressId);
+
+            }
+
+            new OrgEventForm(orgEvent, address).ShowDialog();
+        }
+
+        private void button_delete_Click(object sender, EventArgs e)
+        {
+            int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
+            string a = selectedRow.Cells["Id"].Value.ToString();
+            MongoRepositoryOrgEvent.Remove(Guid.Parse(a));
+        }
+
+        private void адресаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new AddressesForm().ShowDialog();
         }
     }
 }

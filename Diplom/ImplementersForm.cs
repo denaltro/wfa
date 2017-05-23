@@ -26,10 +26,6 @@ namespace Diplom
             {
                 dataGridView1.Rows.Add(imp.Id, imp.ContactName, imp.Name, imp.Phone);
             }
-
-            //var bindingList = new BindingList<Implementer>(implementers);
-            //var source = new BindingSource(bindingList, null);
-            //dataGridView1.DataSource = source;
         }
 
         private void button_add_Click(object sender, EventArgs e)

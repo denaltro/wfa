@@ -14,66 +14,73 @@ namespace Diplom
 {
     public partial class AddressForm : Form
     {
-        public AddressForm()
+        private Address Address;
+        private List<People> PeopleList;
+
+        public AddressForm(Address address = null, List<People> peopleList = null)
         {
+            Address = address;
+            PeopleList = peopleList ?? new List<People>();
             InitializeComponent();
+        }
+
+        private void AddressForm_Load(object sender, EventArgs e)
+        {
+            if (Address == null) return;
+            textBox_street.Text = Address.Street;
+            textBox_house.Text = Address.House;
+            textBox_biulding.Text = Address.Building;
+            textBox_apartment.Text = Address.Apartment;
+
+            foreach (var people in PeopleList)
+            {
+                dataGridView1.Rows.Add(people.Id, people.LastName, people.FirstName, people.SurName, people.Phone);
+            }
         }
 
         private void button_ok_Click(object sender, EventArgs e)
         {
-            //var address = new Address
-            //{
-            //    Id = Guid.NewGuid(),
-            //    Street = textBox_street.Text,
-            //    House = textBox_house.Text,
-            //    Building = textBox_biulding.Text,
-            //    Apartment = textBox_apartment.Text,
-            //    People = new List<Guid>()
-            //};
-
-            //foreach (DataGridViewRow row in dataGridView1.Rows)
-            //{
-            //    var item = new People
-            //    {
-            //        LastName = row.Cells[0].Value.ToString(),
-            //        FirstName = row.Cells[1].Value.ToString(),
-            //        SurName = row.Cells[2].Value.ToString(),
-            //        Phone = row.Cells[3].Value.ToString()
-            //    };
-            //    address.People.Add(item);
-            //}
-
-
-            //MongoRepositoryAddresses.Add(address);
-            Close();
-        }
-
-        private void button_cancel_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void button_add_Click(object sender, EventArgs e)
-        {
-            dataGridView1.Rows.Add();
-        }
-
-        private void button_update_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button_delete_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.SelectedRows.Count != 1) return;
-            Int32 selectedRowCount = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
-            if (selectedRowCount > 0)
+            var address = new Address
             {
-                for (int i = 0; i < selectedRowCount; i++)
+                Id = Address?.Id ?? Guid.NewGuid(),
+                Street = textBox_street.Text,
+                Building = textBox_biulding.Text,
+                House = textBox_house.Text,
+                Apartment = textBox_apartment.Text
+            };
+            MongoRepositoryAddresses.Upsert(address);
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                var id = row.Cells[0].Value?.ToString();
+                var lastName = row.Cells[1].Value?.ToString();
+                var firstName = row.Cells[2].Value?.ToString();
+                var surName = row.Cells[3].Value?.ToString();
+                var phone = row.Cells[4].Value?.ToString();
+
+                if (!string.IsNullOrEmpty(id) && string.IsNullOrEmpty(firstName) &&
+                    string.IsNullOrEmpty(lastName) && string.IsNullOrEmpty(surName) && string.IsNullOrEmpty(phone))
                 {
-                    dataGridView1.Rows.RemoveAt(dataGridView1.SelectedRows[0].Index);
+                    MongoRepositoryPeople.Remove(Guid.Parse(id));
+                }
+
+                if (!string.IsNullOrEmpty(firstName) || !string.IsNullOrEmpty(lastName) ||
+                    !string.IsNullOrEmpty(surName) || !string.IsNullOrEmpty(phone))
+                {
+                    var people = new People
+                    {
+                        Id = id == null ? Guid.NewGuid() : Guid.Parse(id),
+                        FirstName = firstName,
+                        LastName = lastName,
+                        SurName = surName,
+                        Phone = phone,
+                        AddressId = address.Id
+                    };
+                    MongoRepositoryPeople.Upsert(people);
                 }
             }
+
+            Close();
         }
     }
 }
