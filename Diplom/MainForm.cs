@@ -72,7 +72,7 @@ namespace Diplom
                     case Models.EventType.INSTALL:
                         eventType = "Установка";
                         break;
-                    case Models.EventType.REINSTALL:
+                    case Models.EventType.REVISION:
                         eventType = "Переустановка";
                         break;
                     case Models.EventType.VERIFICATION:
@@ -118,6 +118,11 @@ namespace Diplom
         private void адресаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new AddressesForm().ShowDialog();
+        }
+
+        private void листОсмотраToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new VerificationListForm().ShowDialog();
         }
     }
 }

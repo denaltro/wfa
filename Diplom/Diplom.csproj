@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="MongoDB.Bson, Version=2.3.0.157, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MongoDB.Bson.2.3.0\lib\net45\MongoDB.Bson.dll</HintPath>
       <Private>True</Private>
@@ -80,6 +84,7 @@
     <Compile Include="AddressForm.Designer.cs">
       <DependentUpon>AddressForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Verification.cs" />
     <Compile Include="OrgEventForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,12 +96,6 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
     <Compile Include="ImplementerForm.cs">
       <SubType>Form</SubType>
@@ -127,6 +126,12 @@
     <Compile Include="Repository\MongoRepositoryImplementers.cs" />
     <Compile Include="Repository\MongoRepositoryAddresses.cs" />
     <Compile Include="Repository\MongoRepositoryPeople.cs" />
+    <Compile Include="VerificationListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerificationListForm.Designer.cs">
+      <DependentUpon>VerificationListForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddressesForm.resx">
       <DependentUpon>AddressesForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,9 +143,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ImplementerForm.resx">
       <DependentUpon>ImplementerForm.cs</DependentUpon>
@@ -160,6 +162,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="VerificationListForm.resx">
+      <DependentUpon>VerificationListForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Diplom.Repository.MongoRepositoryImplementers.datasource" />
     <None Include="Properties\Settings.settings">

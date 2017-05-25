@@ -99,7 +99,7 @@ namespace Diplom
                     result = EventType.INSTALL;
                     break;
                 case 1:
-                    result = EventType.REINSTALL;
+                    result = EventType.REVISION;
                     break;
                 case 2:
                     result = EventType.VERIFICATION;

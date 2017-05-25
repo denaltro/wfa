@@ -3,6 +3,25 @@ using System.Diagnostics;
 
 namespace Diplom.Models
 {
+    public class Evnt
+    {
+        public Guid Id { get; set; }
+        public Guid AddressId { get; set; }
+
+
+        public CounterType CounterType { get; set; }
+
+    }
+
+    public class Data
+    {
+        public Guid Id { get; set; }
+        public Guid AddressId { get; set; }
+        public CounterType Type { get; set; }
+        public decimal CounterData { get; set; }
+        public DateTime Date { get; set; }
+    }
+
     /// <summary>
     /// Событие
     /// </summary>
@@ -36,6 +55,10 @@ namespace Diplom.Models
         /// Тип события
         /// </summary>
         public EventType EventType { get; set; }
+        /// <summary>
+        /// Показания
+        /// </summary>
+        public decimal Count { get; set; }
     }
 
     public enum CounterType
@@ -48,7 +71,7 @@ namespace Diplom.Models
     public enum EventType
     {
         INSTALL = 0,
-        REINSTALL = 1,
-        VERIFICATION = 2
+        VERIFICATION = 1,
+        REVISION = 2
     }
 }
