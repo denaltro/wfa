@@ -52,5 +52,13 @@ namespace Diplom.Repository
             var result = collection.FindOne(query);
             return result;
         }
+
+        public static List<Address> Get(List<Guid> ids)
+        {
+            var collection = MongoConnection.MongoCollectionAddresses;
+            var query = Query<Address>.In(a => a.Id, ids);
+            var result = collection.Find(query).ToList();
+            return result;
+        }
     }
 }

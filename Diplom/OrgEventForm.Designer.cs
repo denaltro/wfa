@@ -49,6 +49,8 @@
             this.textBox_house = new System.Windows.Forms.TextBox();
             this.textBox_building = new System.Windows.Forms.TextBox();
             this.textBox_apartment = new System.Windows.Forms.TextBox();
+            this.textBox_count = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // comboBox_counterType
@@ -139,7 +141,8 @@
             this.comboBox_eventType.Items.AddRange(new object[] {
             "Установка",
             "Переустановка",
-            "Поверка"});
+            "Поверка",
+            "Демонтаж"});
             this.comboBox_eventType.Location = new System.Drawing.Point(112, 13);
             this.comboBox_eventType.Name = "comboBox_eventType";
             this.comboBox_eventType.Size = new System.Drawing.Size(233, 21);
@@ -156,7 +159,7 @@
             // 
             // button_ok
             // 
-            this.button_ok.Location = new System.Drawing.Point(356, 173);
+            this.button_ok.Location = new System.Drawing.Point(367, 198);
             this.button_ok.Name = "button_ok";
             this.button_ok.Size = new System.Drawing.Size(75, 23);
             this.button_ok.TabIndex = 12;
@@ -166,7 +169,7 @@
             // 
             // button_cancel
             // 
-            this.button_cancel.Location = new System.Drawing.Point(437, 173);
+            this.button_cancel.Location = new System.Drawing.Point(448, 198);
             this.button_cancel.Name = "button_cancel";
             this.button_cancel.Size = new System.Drawing.Size(75, 23);
             this.button_cancel.TabIndex = 13;
@@ -238,11 +241,29 @@
             this.textBox_apartment.Size = new System.Drawing.Size(36, 20);
             this.textBox_apartment.TabIndex = 21;
             // 
+            // textBox_count
+            // 
+            this.textBox_count.Location = new System.Drawing.Point(114, 173);
+            this.textBox_count.Name = "textBox_count";
+            this.textBox_count.Size = new System.Drawing.Size(177, 20);
+            this.textBox_count.TabIndex = 22;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(12, 176);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(63, 13);
+            this.label11.TabIndex = 23;
+            this.label11.Text = "Показания";
+            // 
             // OrgEventForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(535, 205);
+            this.ClientSize = new System.Drawing.Size(535, 229);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.textBox_count);
             this.Controls.Add(this.textBox_apartment);
             this.Controls.Add(this.textBox_building);
             this.Controls.Add(this.textBox_house);
@@ -295,5 +316,7 @@
         private System.Windows.Forms.TextBox textBox_house;
         private System.Windows.Forms.TextBox textBox_building;
         private System.Windows.Forms.TextBox textBox_apartment;
+        private System.Windows.Forms.TextBox textBox_count;
+        private System.Windows.Forms.Label label11;
     }
 }

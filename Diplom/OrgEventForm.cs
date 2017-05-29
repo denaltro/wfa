@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,7 +44,8 @@ namespace Diplom
                 AddressId = address.Id,
                 Date = dateTimePicker_date.Value,
                 ImplementerId = ((ComboBoxItem)comboBox_implementer.SelectedItem).HiddenValue,
-                Place = string.IsNullOrEmpty(textBox_place.Text) ? null : textBox_place.Text
+                Place = string.IsNullOrEmpty(textBox_place.Text) ? null : textBox_place.Text,
+                Count = Convert.ToDecimal(textBox_count.Text)
             };
 
             MongoRepositoryOrgEvent.Upsert(orgEvent);
@@ -79,6 +81,7 @@ namespace Diplom
                 textBox_place.Text = OrgEvent.Place;
                 dateTimePicker_date.Value = OrgEvent.Date;
                 comboBox_counterType.SelectedIndex = (int) OrgEvent.CounterType;
+                textBox_count.Text = OrgEvent.Count.ToString(CultureInfo.InvariantCulture);
 
                 var impId = OrgEvent.ImplementerId;
                 //var index = comboBox_implementer.Items.
@@ -103,6 +106,9 @@ namespace Diplom
                     break;
                 case 2:
                     result = EventType.VERIFICATION;
+                    break;
+                case 3: 
+                    result = EventType.DISASSEMBLY;
                     break;
             }
             return result;

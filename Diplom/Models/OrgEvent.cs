@@ -72,6 +72,7 @@ namespace Diplom.Models
     {
         INSTALL = 0,
         VERIFICATION = 1,
-        REVISION = 2
+        REVISION = 2,
+        DISASSEMBLY = 3
     }
 }

@@ -37,6 +37,10 @@
       <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Word.15.0.4797.1003\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="MongoDB.Bson, Version=2.3.0.157, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MongoDB.Bson.2.3.0\lib\net45\MongoDB.Bson.dll</HintPath>
       <Private>True</Private>
@@ -84,6 +88,19 @@
     <Compile Include="AddressForm.Designer.cs">
       <DependentUpon>AddressForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DocumentDisassemblyCountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocumentDisassemblyCountForm.Designer.cs">
+      <DependentUpon>DocumentDisassemblyCountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentRecountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocumentRecountForm.Designer.cs">
+      <DependentUpon>DocumentRecountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Disassembly.cs" />
     <Compile Include="Models\Verification.cs" />
     <Compile Include="OrgEventForm.cs">
       <SubType>Form</SubType>
@@ -138,6 +155,12 @@
     <EmbeddedResource Include="AddressForm.resx">
       <DependentUpon>AddressForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DocumentDisassemblyCountForm.resx">
+      <DependentUpon>DocumentDisassemblyCountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentRecountForm.resx">
+      <DependentUpon>DocumentRecountForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OrgEventForm.resx">
       <DependentUpon>OrgEventForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -176,6 +199,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Templates\template_disassembly_count.doc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\template_recount.doc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Templates\template_verification_list.xls">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

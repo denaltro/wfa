@@ -78,6 +78,9 @@ namespace Diplom
                     case Models.EventType.VERIFICATION:
                         eventType = "Поверка";
                         break;
+                    case Models.EventType.DISASSEMBLY:
+                        eventType = "Демонтаж";
+                        break;
                 }
 
                 dataGridView1.Rows.Add(orgEvent.Id, orgEvent.AddressId, addressString, counterType, orgEvent.Place, orgEvent.Date, implementer, eventType);
@@ -123,6 +126,16 @@ namespace Diplom
         private void листОсмотраToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new VerificationListForm().ShowDialog();
+        }
+
+        private void перерасчетДляРИЦToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new DocumentRecountForm().ShowDialog();
+        }
+
+        private void реестрСнятияИУстановкиЭлектросчётчиковToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new DocumentDisassemblyCountForm().ShowDialog();
         }
     }
 }

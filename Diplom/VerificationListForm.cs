@@ -16,6 +16,8 @@ namespace Diplom
             InitializeComponent();
         }
 
+        // ОТРЕФАКТОРИТЬ
+
         private void button_open_Click(object sender, EventArgs e)
         {
             openFileDialog1.Filter = "Excel Files|*.xls;*.xlsx;*.xlsm";
