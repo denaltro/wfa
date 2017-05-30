@@ -42,7 +42,7 @@ namespace Diplom
                 EventType = GetEventType(),
                 CounterType = GetCounterType(),
                 AddressId = address.Id,
-                Date = dateTimePicker_date.Value,
+                DateTime = dateTimePicker_date.Value.Ticks,
                 ImplementerId = ((ComboBoxItem)comboBox_implementer.SelectedItem).HiddenValue,
                 Place = string.IsNullOrEmpty(textBox_place.Text) ? null : textBox_place.Text,
                 Count = Convert.ToDecimal(textBox_count.Text)
@@ -79,7 +79,7 @@ namespace Diplom
                 textBox_apartment.Text = Address?.Apartment;
                 comboBox_eventType.SelectedIndex = (int)OrgEvent.EventType;
                 textBox_place.Text = OrgEvent.Place;
-                dateTimePicker_date.Value = OrgEvent.Date;
+                dateTimePicker_date.Value = new DateTime(OrgEvent.DateTime);
                 comboBox_counterType.SelectedIndex = (int) OrgEvent.CounterType;
                 textBox_count.Text = OrgEvent.Count.ToString(CultureInfo.InvariantCulture);
 

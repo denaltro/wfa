@@ -24,8 +24,8 @@ namespace Diplom
 
         private void button_ok_Click(object sender, EventArgs e)
         {
-            //var startDate = dateTimePicker1.Value.Date;
-            //var endDate = dateTimePicker2.Value.Date;
+            //var startDate = dateTimePicker1.Value.DateTime;
+            //var endDate = dateTimePicker2.Value.DateTime;
             
             //var events = MongoRepositoryOrgEvent.GetByDate(startDate, endDate, new List<EventType> { EventType.DISASSEMBLY, EventType.INSTALL});
             //var addressIdList = events.Select(s => s.AddressId).Distinct().ToList();
@@ -43,7 +43,7 @@ namespace Diplom
 
             //    var disassembly = new Disassembly
             //    {
-            //        Date = dis.Date.ToString("dd.MM.yyyy"),
+            //        DateTime = dis.DateTime.ToString("dd.MM.yyyy"),
             //        Address = address.Street + " " + address.House + " " + address.Building + " "+ address.Apartment,
             //        CountDisassembly = dis.Count,
             //        CountInstall = install.Count

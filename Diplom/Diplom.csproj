@@ -88,6 +88,12 @@
     <Compile Include="AddressForm.Designer.cs">
       <DependentUpon>AddressForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DocumentAcceptanceActsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocumentAcceptanceActsForm.Designer.cs">
+      <DependentUpon>DocumentAcceptanceActsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DocumentDisassemblyCountForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +161,9 @@
     <EmbeddedResource Include="AddressForm.resx">
       <DependentUpon>AddressForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DocumentAcceptanceActsForm.resx">
+      <DependentUpon>DocumentAcceptanceActsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DocumentDisassemblyCountForm.resx">
       <DependentUpon>DocumentDisassemblyCountForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,6 +208,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Templates\template_acceptance_acts.doc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Templates\template_disassembly_count.doc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

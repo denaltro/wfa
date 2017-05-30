@@ -40,12 +40,12 @@ namespace Diplom.Repository
             return result;
         }
 
-        public static List<OrgEvent> GetByDate(DateTime startDate, DateTime endDate, List<EventType> eventTypeList)
+        public static List<OrgEvent> GetByDate(long startDate, long endDate, List<EventType> eventTypeList)
         {
             var collection = MongoConnection.MongoCollectionOrgEvents;
             var query = Query.And(
-                Query<OrgEvent>.GTE(a => a.Date, startDate),
-                Query<OrgEvent>.LTE(a => a.Date, endDate),
+                Query<OrgEvent>.GTE(a => a.DateTime, startDate),
+                Query<OrgEvent>.LTE(a => a.DateTime, endDate),
                 Query<OrgEvent>.In(a => a.EventType, eventTypeList)
             );
             var result = collection.Find(query).ToList();

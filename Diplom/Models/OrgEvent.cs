@@ -46,7 +46,7 @@ namespace Diplom.Models
         /// <summary>
         /// Дата установки
         /// </summary>
-        public DateTime Date { get; set; }
+        public long DateTime { get; set; }
         /// <summary>
         /// Идентификатор исполнителя
         /// </summary>

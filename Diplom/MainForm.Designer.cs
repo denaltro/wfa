@@ -33,6 +33,8 @@
             this.адресаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.документыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.листОсмотраToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.перерасчетДляРИЦToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.реестрСнятияИУстановкиЭлектросчётчиковToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -47,8 +49,7 @@
             this.button_add = new System.Windows.Forms.Button();
             this.button_update = new System.Windows.Forms.Button();
             this.button_remove = new System.Windows.Forms.Button();
-            this.перерасчетДляРИЦToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.реестрСнятияИУстановкиЭлектросчётчиковToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.актыПриемкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -86,7 +87,8 @@
             this.документыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.листОсмотраToolStripMenuItem,
             this.перерасчетДляРИЦToolStripMenuItem,
-            this.реестрСнятияИУстановкиЭлектросчётчиковToolStripMenuItem});
+            this.реестрСнятияИУстановкиЭлектросчётчиковToolStripMenuItem,
+            this.актыПриемкиToolStripMenuItem});
             this.документыToolStripMenuItem.Name = "документыToolStripMenuItem";
             this.документыToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
             this.документыToolStripMenuItem.Text = "Документы";
@@ -94,9 +96,23 @@
             // листОсмотраToolStripMenuItem
             // 
             this.листОсмотраToolStripMenuItem.Name = "листОсмотраToolStripMenuItem";
-            this.листОсмотраToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.листОсмотраToolStripMenuItem.Size = new System.Drawing.Size(324, 22);
             this.листОсмотраToolStripMenuItem.Text = "Лист осмотра";
             this.листОсмотраToolStripMenuItem.Click += new System.EventHandler(this.листОсмотраToolStripMenuItem_Click);
+            // 
+            // перерасчетДляРИЦToolStripMenuItem
+            // 
+            this.перерасчетДляРИЦToolStripMenuItem.Name = "перерасчетДляРИЦToolStripMenuItem";
+            this.перерасчетДляРИЦToolStripMenuItem.Size = new System.Drawing.Size(324, 22);
+            this.перерасчетДляРИЦToolStripMenuItem.Text = "Перерасчет для РИЦ";
+            this.перерасчетДляРИЦToolStripMenuItem.Click += new System.EventHandler(this.перерасчетДляРИЦToolStripMenuItem_Click);
+            // 
+            // реестрСнятияИУстановкиЭлектросчётчиковToolStripMenuItem
+            // 
+            this.реестрСнятияИУстановкиЭлектросчётчиковToolStripMenuItem.Name = "реестрСнятияИУстановкиЭлектросчётчиковToolStripMenuItem";
+            this.реестрСнятияИУстановкиЭлектросчётчиковToolStripMenuItem.Size = new System.Drawing.Size(324, 22);
+            this.реестрСнятияИУстановкиЭлектросчётчиковToolStripMenuItem.Text = "Реестр снятия и установки электросчётчиков";
+            this.реестрСнятияИУстановкиЭлектросчётчиковToolStripMenuItem.Click += new System.EventHandler(this.реестрСнятияИУстановкиЭлектросчётчиковToolStripMenuItem_Click);
             // 
             // отчетыToolStripMenuItem
             // 
@@ -208,19 +224,12 @@
             this.button_remove.UseVisualStyleBackColor = true;
             this.button_remove.Click += new System.EventHandler(this.button_delete_Click);
             // 
-            // перерасчетДляРИЦToolStripMenuItem
+            // актыПриемкиToolStripMenuItem
             // 
-            this.перерасчетДляРИЦToolStripMenuItem.Name = "перерасчетДляРИЦToolStripMenuItem";
-            this.перерасчетДляРИЦToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.перерасчетДляРИЦToolStripMenuItem.Text = "Перерасчет для РИЦ";
-            this.перерасчетДляРИЦToolStripMenuItem.Click += new System.EventHandler(this.перерасчетДляРИЦToolStripMenuItem_Click);
-            // 
-            // реестрСнятияИУстановкиЭлектросчётчиковToolStripMenuItem
-            // 
-            this.реестрСнятияИУстановкиЭлектросчётчиковToolStripMenuItem.Name = "реестрСнятияИУстановкиЭлектросчётчиковToolStripMenuItem";
-            this.реестрСнятияИУстановкиЭлектросчётчиковToolStripMenuItem.Size = new System.Drawing.Size(324, 22);
-            this.реестрСнятияИУстановкиЭлектросчётчиковToolStripMenuItem.Text = "Реестр снятия и установки электросчётчиков";
-            this.реестрСнятияИУстановкиЭлектросчётчиковToolStripMenuItem.Click += new System.EventHandler(this.реестрСнятияИУстановкиЭлектросчётчиковToolStripMenuItem_Click);
+            this.актыПриемкиToolStripMenuItem.Name = "актыПриемкиToolStripMenuItem";
+            this.актыПриемкиToolStripMenuItem.Size = new System.Drawing.Size(324, 22);
+            this.актыПриемкиToolStripMenuItem.Text = "Акты приемки";
+            this.актыПриемкиToolStripMenuItem.Click += new System.EventHandler(this.актыПриемкиToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -267,5 +276,6 @@
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem перерасчетДляРИЦToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem реестрСнятияИУстановкиЭлектросчётчиковToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem актыПриемкиToolStripMenuItem;
     }
 }

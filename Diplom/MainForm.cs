@@ -83,7 +83,7 @@ namespace Diplom
                         break;
                 }
 
-                dataGridView1.Rows.Add(orgEvent.Id, orgEvent.AddressId, addressString, counterType, orgEvent.Place, orgEvent.Date, implementer, eventType);
+                dataGridView1.Rows.Add(orgEvent.Id, orgEvent.AddressId, addressString, counterType, orgEvent.Place, new DateTime(orgEvent.DateTime).ToString("D"), implementer, eventType);
             }
         }
 
@@ -136,6 +136,11 @@ namespace Diplom
         private void реестрСнятияИУстановкиЭлектросчётчиковToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new DocumentDisassemblyCountForm().ShowDialog();
+        }
+
+        private void актыПриемкиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new DocumentAcceptanceActsForm().ShowDialog();
         }
     }
 }
