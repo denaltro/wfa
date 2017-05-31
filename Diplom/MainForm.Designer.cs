@@ -35,6 +35,7 @@
             this.листОсмотраToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.перерасчетДляРИЦToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.реестрСнятияИУстановкиЭлектросчётчиковToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.актыПриемкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -49,7 +50,7 @@
             this.button_add = new System.Windows.Forms.Button();
             this.button_update = new System.Windows.Forms.Button();
             this.button_remove = new System.Windows.Forms.Button();
-            this.актыПриемкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.реестрПоверокToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -88,7 +89,8 @@
             this.листОсмотраToolStripMenuItem,
             this.перерасчетДляРИЦToolStripMenuItem,
             this.реестрСнятияИУстановкиЭлектросчётчиковToolStripMenuItem,
-            this.актыПриемкиToolStripMenuItem});
+            this.актыПриемкиToolStripMenuItem,
+            this.реестрПоверокToolStripMenuItem});
             this.документыToolStripMenuItem.Name = "документыToolStripMenuItem";
             this.документыToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
             this.документыToolStripMenuItem.Text = "Документы";
@@ -113,6 +115,13 @@
             this.реестрСнятияИУстановкиЭлектросчётчиковToolStripMenuItem.Size = new System.Drawing.Size(324, 22);
             this.реестрСнятияИУстановкиЭлектросчётчиковToolStripMenuItem.Text = "Реестр снятия и установки электросчётчиков";
             this.реестрСнятияИУстановкиЭлектросчётчиковToolStripMenuItem.Click += new System.EventHandler(this.реестрСнятияИУстановкиЭлектросчётчиковToolStripMenuItem_Click);
+            // 
+            // актыПриемкиToolStripMenuItem
+            // 
+            this.актыПриемкиToolStripMenuItem.Name = "актыПриемкиToolStripMenuItem";
+            this.актыПриемкиToolStripMenuItem.Size = new System.Drawing.Size(324, 22);
+            this.актыПриемкиToolStripMenuItem.Text = "Акты приемки";
+            this.актыПриемкиToolStripMenuItem.Click += new System.EventHandler(this.актыПриемкиToolStripMenuItem_Click);
             // 
             // отчетыToolStripMenuItem
             // 
@@ -224,12 +233,12 @@
             this.button_remove.UseVisualStyleBackColor = true;
             this.button_remove.Click += new System.EventHandler(this.button_delete_Click);
             // 
-            // актыПриемкиToolStripMenuItem
+            // реестрПоверокToolStripMenuItem
             // 
-            this.актыПриемкиToolStripMenuItem.Name = "актыПриемкиToolStripMenuItem";
-            this.актыПриемкиToolStripMenuItem.Size = new System.Drawing.Size(324, 22);
-            this.актыПриемкиToolStripMenuItem.Text = "Акты приемки";
-            this.актыПриемкиToolStripMenuItem.Click += new System.EventHandler(this.актыПриемкиToolStripMenuItem_Click);
+            this.реестрПоверокToolStripMenuItem.Name = "реестрПоверокToolStripMenuItem";
+            this.реестрПоверокToolStripMenuItem.Size = new System.Drawing.Size(324, 22);
+            this.реестрПоверокToolStripMenuItem.Text = "Реестр поверок";
+            this.реестрПоверокToolStripMenuItem.Click += new System.EventHandler(this.реестрПоверокToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -277,5 +286,6 @@
         private System.Windows.Forms.ToolStripMenuItem перерасчетДляРИЦToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem реестрСнятияИУстановкиЭлектросчётчиковToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem актыПриемкиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem реестрПоверокToolStripMenuItem;
     }
 }
