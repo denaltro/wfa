@@ -143,9 +143,9 @@ namespace Diplom
             new DocumentAcceptanceActsForm().ShowDialog();
         }
 
-        private void реестрПоверокToolStripMenuItem_Click(object sender, EventArgs e)
+        private void контролерыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new DocumentVerificationRegisterForm().ShowDialog();
+            new ControllersForm().ShowDialog();
         }
     }
 }

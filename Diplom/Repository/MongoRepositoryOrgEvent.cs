@@ -47,19 +47,7 @@ namespace Diplom.Repository
                 Query<OrgEvent>.GTE(a => a.DateTime, startDate),
                 Query<OrgEvent>.LTE(a => a.DateTime, endDate),
                 Query<OrgEvent>.In(a => a.EventType, eventTypeList)
-                );
-            var result = collection.Find(query).ToList();
-            return result;
-        }
-
-        public static List<OrgEvent> GetByDate(long startDate, long endDate, List<EventType> eventTypeList, List<CounterType> counterTypeList)
-        {
-            var collection = MongoConnection.MongoCollectionOrgEvents;
-            var query = Query.And(
-                Query<OrgEvent>.GTE(a => a.DateTime, startDate),
-                Query<OrgEvent>.LTE(a => a.DateTime, endDate),
-                Query<OrgEvent>.In(a => a.EventType, eventTypeList),
-                Query<OrgEvent>.In(a => a.CounterType, counterTypeList));
+            );
             var result = collection.Find(query).ToList();
             return result;
         }

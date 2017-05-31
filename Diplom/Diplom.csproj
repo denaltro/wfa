@@ -88,6 +88,12 @@
     <Compile Include="AddressForm.Designer.cs">
       <DependentUpon>AddressForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControllersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControllersForm.Designer.cs">
+      <DependentUpon>ControllersForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DocumentAcceptanceActsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,12 +112,7 @@
     <Compile Include="DocumentRecountForm.Designer.cs">
       <DependentUpon>DocumentRecountForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DocumentVerificationRegisterForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DocumentVerificationRegisterForm.Designer.cs">
-      <DependentUpon>DocumentVerificationRegisterForm.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Models\Controller.cs" />
     <Compile Include="Models\Disassembly.cs" />
     <Compile Include="Models\Verification.cs" />
     <Compile Include="OrgEventForm.cs">
@@ -151,6 +152,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\MongoConnection.cs" />
+    <Compile Include="Repository\MongoRepositoryController.cs" />
     <Compile Include="Repository\MongoRepositoryOrgEvent.cs" />
     <Compile Include="Repository\MongoRepositoryImplementers.cs" />
     <Compile Include="Repository\MongoRepositoryAddresses.cs" />
@@ -167,6 +169,9 @@
     <EmbeddedResource Include="AddressForm.resx">
       <DependentUpon>AddressForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ControllersForm.resx">
+      <DependentUpon>ControllersForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DocumentAcceptanceActsForm.resx">
       <DependentUpon>DocumentAcceptanceActsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,9 +180,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DocumentRecountForm.resx">
       <DependentUpon>DocumentRecountForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DocumentVerificationRegisterForm.resx">
-      <DependentUpon>DocumentVerificationRegisterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrgEventForm.resx">
       <DependentUpon>OrgEventForm.cs</DependentUpon>
@@ -227,9 +229,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Templates\template_verification_list.xls">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Templates\template_verification_register.doc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

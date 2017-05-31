@@ -15,6 +15,8 @@ namespace Diplom.Repository
         public static MongoCollection<Implementer> MongoCollectionImplementers { get; set; }
         public static MongoCollection<OrgEvent> MongoCollectionOrgEvents { get; set; }
         public static MongoCollection<People> MongoCollectionPeople { get; set; }
+        public static MongoCollection<Controller> MongoCollectionController { get; set; }
+        public static MongoCollection<User> MongoCollectionUser { get; set; }
 
         static MongoConnection()
         {
@@ -25,10 +27,12 @@ namespace Diplom.Repository
 #pragma warning restore
             MongoDatabase database = server.GetDatabase(ConfigurationManager.AppSettings["mongo-database"]);
 
+            MongoCollectionController = database.GetCollection<Controller>(ConfigurationManager.AppSettings["mongo-collection-controller"]);
             MongoCollectionAddresses = database.GetCollection<Address>(ConfigurationManager.AppSettings["mongo-collection-addresses"]);
             MongoCollectionImplementers = database.GetCollection<Implementer>(ConfigurationManager.AppSettings["mongo-collection-implementers"]);
             MongoCollectionOrgEvents = database.GetCollection<OrgEvent>(ConfigurationManager.AppSettings["mongo-collection-orgevents"]);
             MongoCollectionPeople = database.GetCollection<People>(ConfigurationManager.AppSettings["mongo-collection-people"]);
+            MongoCollectionUser = database.GetCollection<User>(ConfigurationManager.AppSettings["mongo-collection-users"]);
         }
     }
 }
