@@ -69,8 +69,12 @@ namespace Diplom
                     var addressCell = (Range)xlWorksheet.Cells[rowNumber, 4];
                     if (addressCell.Font.Bold == true && !string.IsNullOrEmpty(addressCell.Value))
                     {
+                        // МБ НАДО ПОМЕНЯТЬ МЕСТАМИ
                         if (verification != null) result.Add(verification);
+                        // ВОТС ЭТИМ
                         AddressShort shortAddress = ParseAddress(addressCell.Value.ToString());
+
+
                         if (shortAddress == null) continue;
                         var exist = addressList.FirstOrDefault(w => w.Street == shortAddress.Street &&
                                                                     w.House == shortAddress.House && w.Apartment ==
