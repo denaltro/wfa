@@ -90,5 +90,10 @@ namespace Diplom
 
             Close();
         }
+
+        private void comboBox_users_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            comboBox_users.Text = comboBox_users.SelectedItem.ToString();
+        }
     }
 }

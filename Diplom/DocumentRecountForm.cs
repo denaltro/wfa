@@ -77,5 +77,10 @@ namespace Diplom
                 ref matchWildCards, ref matchSoundsLike, ref matchAllWordForms, ref forward, ref wrap, ref format, ref replaceWithText, ref replace,
                 ref matchKashida, ref matchDiacritics, ref matchAlefHamza, ref matchControl);
         }
+
+        private void comboBox_counterType_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            comboBox_counterType.Text = comboBox_counterType.SelectedItem.ToString();
+        }
     }
 }

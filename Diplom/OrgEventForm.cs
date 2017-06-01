@@ -132,6 +132,21 @@ namespace Diplom
             }
             return result;
         }
+
+        private void comboBox_eventType_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            comboBox_eventType.Text = comboBox_eventType.SelectedItem.ToString();
+        }
+
+        private void comboBox_counterType_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            comboBox_counterType.Text = comboBox_counterType.SelectedItem.ToString();
+        }
+
+        private void comboBox_implementer_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            comboBox_implementer.Text = comboBox_implementer.SelectedItem.ToString();
+        }
     }
 
     public class ComboBoxItem

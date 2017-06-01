@@ -28,6 +28,7 @@ namespace Diplom
             var name = textBox_name.Text;
             var password = Helpers.sha256_hash(textBox_password.Text);
             User = MongoRepositoryUsers.Login(name, password);
+            
             if (User != null)
             {
                 DialogResult = DialogResult.OK;

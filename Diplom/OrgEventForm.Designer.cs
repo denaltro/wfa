@@ -65,6 +65,7 @@
             this.comboBox_counterType.Name = "comboBox_counterType";
             this.comboBox_counterType.Size = new System.Drawing.Size(233, 21);
             this.comboBox_counterType.TabIndex = 0;
+            this.comboBox_counterType.SelectionChangeCommitted += new System.EventHandler(this.comboBox_counterType_SelectionChangeCommitted);
             // 
             // dateTimePicker_date
             // 
@@ -147,6 +148,7 @@
             this.comboBox_eventType.Name = "comboBox_eventType";
             this.comboBox_eventType.Size = new System.Drawing.Size(233, 21);
             this.comboBox_eventType.TabIndex = 10;
+            this.comboBox_eventType.SelectionChangeCommitted += new System.EventHandler(this.comboBox_eventType_SelectionChangeCommitted);
             // 
             // comboBox_implementer
             // 
@@ -156,6 +158,7 @@
             this.comboBox_implementer.Name = "comboBox_implementer";
             this.comboBox_implementer.Size = new System.Drawing.Size(232, 21);
             this.comboBox_implementer.TabIndex = 11;
+            this.comboBox_implementer.SelectionChangeCommitted += new System.EventHandler(this.comboBox_implementer_SelectionChangeCommitted);
             // 
             // button_ok
             // 

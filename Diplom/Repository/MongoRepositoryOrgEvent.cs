@@ -51,5 +51,23 @@ namespace Diplom.Repository
             var result = collection.Find(query).ToList();
             return result;
         }
+
+        public static List<OrgEvent> GetByAddressandType(List<Address> addressList, EventType type)
+        {
+            var addressIdList = new List<Guid>();
+            for (int i=0; i< addressList.Count; i++)
+            {
+                addressIdList.Add(addressList[i].Id);
+            }
+            var collection = MongoConnection.MongoCollectionOrgEvents;
+            var query = Query.And(
+            Query<OrgEvent>.EQ(a => a.EventType, type),
+            Query<OrgEvent>.In(a => a.AddressId, addressIdList),
+            Query<OrgEvent>.GTE(a => a.DateTime, DateTime.Today.AddYears(-4).Ticks),
+            Query<OrgEvent>.LTE(a => a.DateTime, DateTime.Today.AddYears(-4).AddMonths(3).Ticks)
+            );
+            var result = collection.Find(query).ToList();
+            return result;
+        }
     }
 }

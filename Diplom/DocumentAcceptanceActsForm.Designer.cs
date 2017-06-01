@@ -38,7 +38,7 @@
             // 
             // button_ok
             // 
-            this.button_ok.Location = new System.Drawing.Point(194, 43);
+            this.button_ok.Location = new System.Drawing.Point(211, 46);
             this.button_ok.Name = "button_ok";
             this.button_ok.Size = new System.Drawing.Size(75, 23);
             this.button_ok.TabIndex = 0;
@@ -48,7 +48,7 @@
             // 
             // button_cancel
             // 
-            this.button_cancel.Location = new System.Drawing.Point(275, 43);
+            this.button_cancel.Location = new System.Drawing.Point(292, 46);
             this.button_cancel.Name = "button_cancel";
             this.button_cancel.Size = new System.Drawing.Size(75, 23);
             this.button_cancel.TabIndex = 1;
@@ -67,7 +67,7 @@
             // 
             this.dateTimePicker_end.Location = new System.Drawing.Point(211, 7);
             this.dateTimePicker_end.Name = "dateTimePicker_end";
-            this.dateTimePicker_end.Size = new System.Drawing.Size(139, 20);
+            this.dateTimePicker_end.Size = new System.Drawing.Size(156, 20);
             this.dateTimePicker_end.TabIndex = 3;
             // 
             // label1
@@ -92,7 +92,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(365, 78);
+            this.ClientSize = new System.Drawing.Size(391, 81);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePicker_end);

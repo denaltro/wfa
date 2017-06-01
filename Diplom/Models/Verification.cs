@@ -19,5 +19,6 @@ namespace Diplom.Models
         public string EndCount { get; set; }
         public string StartDate { get; set; }
         public string EndDate { get; set; }
+        public string DateVerific { get; set; }
     }
 }

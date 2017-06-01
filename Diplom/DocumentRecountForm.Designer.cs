@@ -119,6 +119,7 @@
             this.comboBox_counterType.Name = "comboBox_counterType";
             this.comboBox_counterType.Size = new System.Drawing.Size(161, 21);
             this.comboBox_counterType.TabIndex = 8;
+            this.comboBox_counterType.SelectionChangeCommitted += new System.EventHandler(this.comboBox_counterType_SelectionChangeCommitted);
             // 
             // textBox_count
             // 

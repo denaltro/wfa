@@ -146,10 +146,7 @@ namespace Diplom
             new DocumentAcceptanceActsForm().ShowDialog();
         }
 
-        private void контролерыToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            new ControllersForm().ShowDialog();
-        }
+      
 
         private void администрированиеToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -159,6 +156,11 @@ namespace Diplom
         private void MainForm_Load(object sender, EventArgs e)
         {
             администрированиеToolStripMenuItem.Visible = User.IsAdmin;
+        }
+
+        private void оСовершенныхПоверкахToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new oVerificationForm().ShowDialog();
         }
     }
 }

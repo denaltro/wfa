@@ -26,48 +26,51 @@ namespace Diplom
         {
             //var startDate = dateTimePicker1.Value.DateTime;
             //var endDate = dateTimePicker2.Value.DateTime;
-            
-            //var events = MongoRepositoryOrgEvent.GetByDate(startDate, endDate, new List<EventType> { EventType.DISASSEMBLY, EventType.INSTALL});
-            //var addressIdList = events.Select(s => s.AddressId).Distinct().ToList();
-            //var addressList = MongoRepositoryAddresses.Get(addressIdList);
 
-            //var disassemblyEventList = events.Where(w => w.EventType == EventType.DISASSEMBLY).ToList();
-            //var installEventList = events.Where(w => w.EventType == EventType.INSTALL).ToList();
+            var startTicks = dateTimePicker1.Value.Date.Ticks;
+            var endTicks = dateTimePicker2.Value.Date.AddDays(1).Ticks;
 
-            //var result = new List<Disassembly>();
+            var events = MongoRepositoryOrgEvent.GetByDate(startTicks, endTicks, new List<EventType> { EventType.DISASSEMBLY, EventType.INSTALL });
+            var addressIdList = events.Select(s => s.AddressId).Distinct().ToList();
+            var addressList = MongoRepositoryAddresses.Get(addressIdList);
 
-            //foreach (var dis in disassemblyEventList)
-            //{
-            //    var address = addressList.First(f => f.Id == dis.AddressId);
-            //    var install = installEventList.First(w => w.AddressId == dis.AddressId && w.CounterType == dis.CounterType);
+            var disassemblyEventList = events.Where(w => w.EventType == EventType.DISASSEMBLY).ToList();
+            var installEventList = events.Where(w => w.EventType == EventType.INSTALL).ToList();
 
-            //    var disassembly = new Disassembly
-            //    {
-            //        DateTime = dis.DateTime.ToString("dd.MM.yyyy"),
-            //        Address = address.Street + " " + address.House + " " + address.Building + " "+ address.Apartment,
-            //        CountDisassembly = dis.Count,
-            //        CountInstall = install.Count
-            //    };
-            //    result.Add(disassembly);
-            //}
+            var result = new List<Disassembly>();
 
-            var disList = new List<Disassembly>();
-            disList.Add(new Disassembly
+            foreach (var dis in disassemblyEventList)
             {
-                Date = "10.12.2017",
-                Address = "ул. Репина",
-                CountDisassembly = 202103,
-                CountInstall = 123
-            });
-            disList.Add(new Disassembly
-            {
-                Date = "10.12.2018",
-                Address = "ул. Филатова",
-                CountDisassembly = 25553,
-                CountInstall = 1
-            });
+                var address = addressList.First(f => f.Id == dis.AddressId);
+                var install = installEventList.First(w => w.AddressId == dis.AddressId && w.CounterType == dis.CounterType);
 
-            Export(disList);
+                var disassembly = new Disassembly
+                {
+                    Date = dis.DateTime.ToString("dd.MM.yyyy"),
+                    Address = address.Street + " " + address.House + " " + address.Building + " " + address.Apartment,
+                    CountDisassembly = dis.Count,
+                    CountInstall = install.Count
+                };
+                result.Add(disassembly);
+            }
+
+            /*  var disList = new List<Disassembly>();
+              disList.Add(new Disassembly
+              {
+                  Date = "10.12.2017",
+                  Address = "ул. Репина",
+                  CountDisassembly = 202103,
+                  CountInstall = 123
+              });
+              disList.Add(new Disassembly
+              {
+                  Date = "10.12.2018",
+                  Address = "ул. Филатова",
+                  CountDisassembly = 25553,
+                  CountInstall = 1
+              }); */
+
+            Export(result);
 
 
 

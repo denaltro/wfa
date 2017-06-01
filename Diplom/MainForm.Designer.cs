@@ -38,7 +38,7 @@
             this.актыПриемкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.контролерыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.администрированиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AddressId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,7 +51,7 @@
             this.button_add = new System.Windows.Forms.Button();
             this.button_update = new System.Windows.Forms.Button();
             this.button_remove = new System.Windows.Forms.Button();
-            this.администрированиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.оСовершенныхПоверкахToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -64,7 +64,6 @@
             this.документыToolStripMenuItem,
             this.отчетыToolStripMenuItem,
             this.справкаToolStripMenuItem,
-            this.контролерыToolStripMenuItem,
             this.администрированиеToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -127,6 +126,8 @@
             // 
             // отчетыToolStripMenuItem
             // 
+            this.отчетыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.оСовершенныхПоверкахToolStripMenuItem});
             this.отчетыToolStripMenuItem.Name = "отчетыToolStripMenuItem";
             this.отчетыToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.отчетыToolStripMenuItem.Text = "Отчеты";
@@ -137,12 +138,12 @@
             this.справкаToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.справкаToolStripMenuItem.Text = "Справка";
             // 
-            // контролерыToolStripMenuItem
+            // администрированиеToolStripMenuItem
             // 
-            this.контролерыToolStripMenuItem.Name = "контролерыToolStripMenuItem";
-            this.контролерыToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
-            this.контролерыToolStripMenuItem.Text = "Контролеры";
-            this.контролерыToolStripMenuItem.Click += new System.EventHandler(this.контролерыToolStripMenuItem_Click);
+            this.администрированиеToolStripMenuItem.Name = "администрированиеToolStripMenuItem";
+            this.администрированиеToolStripMenuItem.Size = new System.Drawing.Size(134, 20);
+            this.администрированиеToolStripMenuItem.Text = "Администрирование";
+            this.администрированиеToolStripMenuItem.Click += new System.EventHandler(this.администрированиеToolStripMenuItem_Click);
             // 
             // dataGridView1
             // 
@@ -242,12 +243,12 @@
             this.button_remove.UseVisualStyleBackColor = true;
             this.button_remove.Click += new System.EventHandler(this.button_delete_Click);
             // 
-            // администрированиеToolStripMenuItem
+            // оСовершенныхПоверкахToolStripMenuItem
             // 
-            this.администрированиеToolStripMenuItem.Name = "администрированиеToolStripMenuItem";
-            this.администрированиеToolStripMenuItem.Size = new System.Drawing.Size(134, 20);
-            this.администрированиеToolStripMenuItem.Text = "Администрирование";
-            this.администрированиеToolStripMenuItem.Click += new System.EventHandler(this.администрированиеToolStripMenuItem_Click);
+            this.оСовершенныхПоверкахToolStripMenuItem.Name = "оСовершенныхПоверкахToolStripMenuItem";
+            this.оСовершенныхПоверкахToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.оСовершенныхПоверкахToolStripMenuItem.Text = "О совершенных поверках";
+            this.оСовершенныхПоверкахToolStripMenuItem.Click += new System.EventHandler(this.оСовершенныхПоверкахToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -296,7 +297,7 @@
         private System.Windows.Forms.ToolStripMenuItem перерасчетДляРИЦToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem реестрСнятияИУстановкиЭлектросчётчиковToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem актыПриемкиToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem контролерыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem администрированиеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem оСовершенныхПоверкахToolStripMenuItem;
     }
 }

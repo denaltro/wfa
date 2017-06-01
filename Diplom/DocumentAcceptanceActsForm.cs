@@ -22,6 +22,7 @@ namespace Diplom
 
         private void button_ok_Click(object sender, EventArgs e)
         {
+            
             var startTicks = dateTimePicker_start.Value.Date.Ticks;
             var endTicks = dateTimePicker_end.Value.Date.AddDays(1).Ticks;
             var eventTypes = new List<EventType>{EventType.INSTALL};
@@ -30,7 +31,7 @@ namespace Diplom
             var eventList = MongoRepositoryOrgEvent.GetByDate(startTicks, endTicks,eventTypes);
             var addressIdList = eventList.Select(s => s.AddressId).Distinct().ToList();
             var addressList = MongoRepositoryAddresses.Get(addressIdList);
-            
+
 
             object fileName = Path.Combine(Application.StartupPath, "Templates\\template_acceptance_acts.doc");
             Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application { Visible = true };
@@ -69,6 +70,7 @@ namespace Diplom
                 aDoc.Tables[1].Rows[i + 4].Cells[4].Range.Text = new DateTime(eventList[i].DateTime).ToString("D");
                 aDoc.Tables[1].Rows[i + 4].Cells[5].Range.Text = counterType;
                 aDoc.Tables[1].Rows[i + 4].Cells[6].Range.Text = eventList[i].Place;
+
             }
 
 
