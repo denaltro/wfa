@@ -14,8 +14,11 @@ namespace Diplom
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+        public User User;
+
+        public MainForm(User user)
         {
+            User = user;
             InitializeComponent();
         }
 
@@ -146,6 +149,16 @@ namespace Diplom
         private void контролерыToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new ControllersForm().ShowDialog();
+        }
+
+        private void администрированиеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new AdminForm().ShowDialog();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            администрированиеToolStripMenuItem.Visible = User.IsAdmin;
         }
     }
 }

@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Identificator = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox_controller = new System.Windows.Forms.TextBox();
             this.ControllerFioLabel = new System.Windows.Forms.Label();
             this.button_controller_add = new System.Windows.Forms.Button();
             this.button_delete_controller = new System.Windows.Forms.Button();
-            this.Identificator = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.listBox_address = new System.Windows.Forms.ListBox();
             this.comboBox_street = new System.Windows.Forms.ComboBox();
             this.comboBox_houses = new System.Windows.Forms.ComboBox();
@@ -57,6 +57,17 @@
             this.dataGridView2.Size = new System.Drawing.Size(192, 250);
             this.dataGridView2.TabIndex = 0;
             this.dataGridView2.SelectionChanged += new System.EventHandler(this.dataGridView2_SelectionChanged);
+            // 
+            // Identificator
+            // 
+            this.Identificator.HeaderText = "Идентификатор";
+            this.Identificator.Name = "Identificator";
+            this.Identificator.Visible = false;
+            // 
+            // FIO
+            // 
+            this.FIO.HeaderText = "ФИО";
+            this.FIO.Name = "FIO";
             // 
             // textBox_controller
             // 
@@ -93,17 +104,6 @@
             this.button_delete_controller.Text = "Удалить";
             this.button_delete_controller.UseVisualStyleBackColor = false;
             this.button_delete_controller.Click += new System.EventHandler(this.button_delete_controller_Click);
-            // 
-            // Identificator
-            // 
-            this.Identificator.HeaderText = "Идентификатор";
-            this.Identificator.Name = "Identificator";
-            this.Identificator.Visible = false;
-            // 
-            // FIO
-            // 
-            this.FIO.HeaderText = "ФИО";
-            this.FIO.Name = "FIO";
             // 
             // listBox_address
             // 

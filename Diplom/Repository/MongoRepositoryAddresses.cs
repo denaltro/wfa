@@ -60,5 +60,13 @@ namespace Diplom.Repository
             var result = collection.Find(query).ToList();
             return result;
         }
+
+        public static List<Address> GetByUserId(Guid userId)
+        {
+            var collection = MongoConnection.MongoCollectionAddresses;
+            var query = Query<Address>.EQ(a => a.UserId, userId);
+            var result = collection.Find(query).ToList();
+            return result;
+        }
     }
 }

@@ -38,6 +38,7 @@
             this.актыПриемкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.контролерыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AddressId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,7 +51,7 @@
             this.button_add = new System.Windows.Forms.Button();
             this.button_update = new System.Windows.Forms.Button();
             this.button_remove = new System.Windows.Forms.Button();
-            this.контролерыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.администрированиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -63,7 +64,8 @@
             this.документыToolStripMenuItem,
             this.отчетыToolStripMenuItem,
             this.справкаToolStripMenuItem,
-            this.контролерыToolStripMenuItem});
+            this.контролерыToolStripMenuItem,
+            this.администрированиеToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(839, 24);
@@ -134,6 +136,13 @@
             this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
             this.справкаToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.справкаToolStripMenuItem.Text = "Справка";
+            // 
+            // контролерыToolStripMenuItem
+            // 
+            this.контролерыToolStripMenuItem.Name = "контролерыToolStripMenuItem";
+            this.контролерыToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
+            this.контролерыToolStripMenuItem.Text = "Контролеры";
+            this.контролерыToolStripMenuItem.Click += new System.EventHandler(this.контролерыToolStripMenuItem_Click);
             // 
             // dataGridView1
             // 
@@ -233,12 +242,12 @@
             this.button_remove.UseVisualStyleBackColor = true;
             this.button_remove.Click += new System.EventHandler(this.button_delete_Click);
             // 
-            // контролерыToolStripMenuItem
+            // администрированиеToolStripMenuItem
             // 
-            this.контролерыToolStripMenuItem.Name = "контролерыToolStripMenuItem";
-            this.контролерыToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
-            this.контролерыToolStripMenuItem.Text = "Контролеры";
-            this.контролерыToolStripMenuItem.Click += new System.EventHandler(this.контролерыToolStripMenuItem_Click);
+            this.администрированиеToolStripMenuItem.Name = "администрированиеToolStripMenuItem";
+            this.администрированиеToolStripMenuItem.Size = new System.Drawing.Size(134, 20);
+            this.администрированиеToolStripMenuItem.Text = "Администрирование";
+            this.администрированиеToolStripMenuItem.Click += new System.EventHandler(this.администрированиеToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -254,6 +263,7 @@
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.Activated += new System.EventHandler(this.MainForm_Activated);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -287,5 +297,6 @@
         private System.Windows.Forms.ToolStripMenuItem реестрСнятияИУстановкиЭлектросчётчиковToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem актыПриемкиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem контролерыToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem администрированиеToolStripMenuItem;
     }
 }

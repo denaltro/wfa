@@ -26,11 +26,18 @@ namespace Diplom
 
         private void AddressForm_Load(object sender, EventArgs e)
         {
+            var userList = MongoRepositoryUsers.GetAll();
+            foreach (var user in userList)
+            {
+                comboBox_users.Items.Add(new ComboBoxItem(user.Name, user.Id));
+            }
+
             if (Address == null) return;
             textBox_street.Text = Address.Street;
             textBox_house.Text = Address.House;
             textBox_biulding.Text = Address.Building;
             textBox_apartment.Text = Address.Apartment;
+            comboBox_users.SelectedItem = comboBox_users.Items.IndexOf(new ComboBoxItem(string.Empty, Address.UserId));
 
             foreach (var people in PeopleList)
             {
@@ -46,7 +53,8 @@ namespace Diplom
                 Street = textBox_street.Text,
                 Building = textBox_biulding.Text,
                 House = textBox_house.Text,
-                Apartment = textBox_apartment.Text
+                Apartment = textBox_apartment.Text,
+                UserId = ((ComboBoxItem)comboBox_users.SelectedItem).HiddenValue
             };
             MongoRepositoryAddresses.Upsert(address);
 

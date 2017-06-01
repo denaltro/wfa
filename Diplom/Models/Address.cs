@@ -28,5 +28,9 @@ namespace Diplom.Models
         /// Квартира
         /// </summary>
         public string Apartment { get; set; }
+        /// <summary>
+        /// Идентификатор контролёра
+        /// </summary>
+        public Guid UserId { get; set; }
     }
 }

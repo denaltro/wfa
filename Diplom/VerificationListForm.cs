@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using Diplom.Models;
+using Diplom.Repository;
 using Microsoft.Office.Interop.Excel;
 
 namespace Diplom
@@ -39,12 +41,15 @@ namespace Diplom
             var exist = File.Exists(textBox_path.Text);
             if (!exist) MessageBox.Show("Файл не найден!");
 
-            var verificationList = Parse();
+
+
+            var addressList = MongoRepositoryAddresses.GetByUserId(((ComboBoxItem) comboBox1.SelectedItem).HiddenValue);
+            var verificationList = Parse(addressList);
             Export(verificationList);
 
         }
 
-        private List<Verification> Parse()
+        private List<Verification> Parse(List<Address> addressList)
         {
             var rowNumber = 0;
             var result = new List<Verification>();
@@ -65,12 +70,19 @@ namespace Diplom
                     if (addressCell.Font.Bold == true && !string.IsNullOrEmpty(addressCell.Value))
                     {
                         if (verification != null) result.Add(verification);
+                        AddressShort shortAddress = ParseAddress(addressCell.Value.ToString());
+                        if (shortAddress == null) continue;
+                        var exist = addressList.FirstOrDefault(w => w.Street == shortAddress.Street &&
+                                                                    w.House == shortAddress.House && w.Apartment ==
+                                                                    shortAddress.Apartment);
 
+                        if (exist == null) continue;
                         verification = new Verification
                         {
                             Address = addressCell.Value.ToString(),
                             Counters = new List<Counter>()
                         };
+
                     }
                     if (verification != null)
                     {
@@ -133,5 +145,29 @@ namespace Diplom
             xlApp.Visible = true;
         }
 
+        private void VerificationListForm_Load(object sender, EventArgs e)
+        {
+            var userList = MongoRepositoryUsers.GetAll();
+            foreach (var user in userList)
+            {
+                comboBox1.Items.Add(new ComboBoxItem(user.Name, user.Id));
+            }
+        }
+
+        private AddressShort ParseAddress(string rawAddress)
+        {
+            var array = rawAddress.Split(',');
+            if (array.Length != 4) return null;
+            var street = array[1].ToLower().Replace("улица", string.Empty).Trim();
+            var house = array[2].ToLower().Trim();
+            var apartment = array[3].ToLower().Trim();
+            var result = new AddressShort
+            {
+                Street = street,
+                House = house,
+                Apartment = apartment
+            };
+            return result;
+        }
     }
 }

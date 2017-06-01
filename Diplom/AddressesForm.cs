@@ -52,10 +52,12 @@ namespace Diplom
         {
             dataGridView1.Rows.Clear();
             var addressList = MongoRepositoryAddresses.GetAll();
+            var userList = MongoRepositoryUsers.GetAll();
             foreach (var address in addressList)
             {
+                var user = userList.First(f => f.Id == address.UserId);
                 dataGridView1.Rows.Add(address.Id, address.Street, address.House, address.Building,
-                    address.Apartment);
+                    address.Apartment, user.Name);
             }
         }
     }

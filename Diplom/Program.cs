@@ -16,7 +16,18 @@ namespace Diplom
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            var auth = new AuthForm();
+            Application.Run(auth);
+            if (auth.DialogResult == DialogResult.OK)
+            {
+                auth.Close();
+                Application.Run(new MainForm(auth.User));
+            }
+            else
+            {
+                Application.Exit();
+            }
+
         }
     }
 }

@@ -45,12 +45,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.comboBox_users = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // button_ok
             // 
-            this.button_ok.Location = new System.Drawing.Point(264, 247);
+            this.button_ok.Location = new System.Drawing.Point(263, 274);
             this.button_ok.Name = "button_ok";
             this.button_ok.Size = new System.Drawing.Size(75, 23);
             this.button_ok.TabIndex = 0;
@@ -60,7 +62,7 @@
             // 
             // button_cancel
             // 
-            this.button_cancel.Location = new System.Drawing.Point(345, 247);
+            this.button_cancel.Location = new System.Drawing.Point(344, 274);
             this.button_cancel.Name = "button_cancel";
             this.button_cancel.Size = new System.Drawing.Size(75, 23);
             this.button_cancel.TabIndex = 1;
@@ -183,11 +185,30 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "Список проживающих";
             // 
+            // comboBox_users
+            // 
+            this.comboBox_users.FormattingEnabled = true;
+            this.comboBox_users.Location = new System.Drawing.Point(83, 247);
+            this.comboBox_users.Name = "comboBox_users";
+            this.comboBox_users.Size = new System.Drawing.Size(336, 21);
+            this.comboBox_users.TabIndex = 12;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(12, 250);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(61, 13);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Контролер";
+            // 
             // AddressForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(434, 280);
+            this.ClientSize = new System.Drawing.Size(434, 307);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.comboBox_users);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -228,5 +249,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
         private System.Windows.Forms.DataGridViewTextBoxColumn SurName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
+        private System.Windows.Forms.ComboBox comboBox_users;
+        private System.Windows.Forms.Label label6;
     }
 }

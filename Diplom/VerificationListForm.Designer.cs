@@ -33,6 +33,8 @@
             this.button_load = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button_open = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -49,7 +51,7 @@
             // 
             // button_load
             // 
-            this.button_load.Location = new System.Drawing.Point(495, 33);
+            this.button_load.Location = new System.Drawing.Point(414, 64);
             this.button_load.Name = "button_load";
             this.button_load.Size = new System.Drawing.Size(75, 23);
             this.button_load.TabIndex = 1;
@@ -76,17 +78,37 @@
             this.button_open.UseVisualStyleBackColor = true;
             this.button_open.Click += new System.EventHandler(this.button_open_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(79, 66);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(329, 21);
+            this.comboBox1.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 69);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(61, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Контролер";
+            // 
             // VerificationListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(580, 69);
+            this.ClientSize = new System.Drawing.Size(499, 102);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button_open);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button_load);
             this.Controls.Add(this.textBox_path);
             this.Name = "VerificationListForm";
             this.Text = "VerificationList";
+            this.Load += new System.EventHandler(this.VerificationListForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,5 +121,7 @@
         private System.Windows.Forms.Button button_load;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button_open;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label2;
     }
 }

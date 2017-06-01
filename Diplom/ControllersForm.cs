@@ -19,36 +19,36 @@ namespace Diplom
         {
             InitializeComponent();
         }
-        private Controller Controller = null;
+        //private Controller Controller = null;
         private void button_controller_add_Click(object sender, EventArgs e)
         {
-            var controllers = new Controller
-            {
-                Id = Controller == null ? Guid.NewGuid() : Controller.Id,
-                FIO = textBox_controller.Text,
-                Houses = new List<Houses>()
-            };
-            Houses houses = new Houses();
-            foreach (string i in listBox_address.Items)
-            {
-                houses.Street = i.Split(' ')[0];
-                houses.House = i.Split(' ')[1];
-                controllers.Houses.Add(houses);
-            }
+            //var controllers = new Controller
+            //{
+            //    Id = Controller == null ? Guid.NewGuid() : Controller.Id,
+            //    FIO = textBox_controller.Text,
+            //    Houses = new List<Houses>()
+            //};
+            //Houses houses = new Houses();
+            //foreach (string i in listBox_address.Items)
+            //{
+            //    houses.Street = i.Split(' ')[0];
+            //    houses.House = i.Split(' ')[1];
+            //    controllers.Houses.Add(houses);
+            //}
             
 
-            MongoRepositoryController.Upsert(controllers);
-            dataGridView2.Rows.Clear();
-            this.ControllersForm_Load(sender, e);
+            //MongoRepositoryController.Upsert(controllers);
+            //dataGridView2.Rows.Clear();
+            //this.ControllersForm_Load(sender, e);
         }
 
         private void ControllersForm_Load(object sender, EventArgs e)
         {
-            var controllers = MongoRepositoryController.GetAll();
-            foreach (var imp in controllers)
-            {
-                dataGridView2.Rows.Add(imp.Id, imp.FIO);
-            }
+            //var controllers = MongoRepositoryController.GetAll();
+            //foreach (var imp in controllers)
+            //{
+            //    dataGridView2.Rows.Add(imp.Id, imp.FIO);
+            //}
 
             AddressList = MongoRepositoryAddresses.GetAll();
             var streetList = AddressList.Select(s => s.Street).Distinct().ToList();
@@ -64,7 +64,7 @@ namespace Diplom
             int selectedrowindex = dataGridView2.SelectedCells[0].RowIndex;
             DataGridViewRow selectedRow = dataGridView2.Rows[selectedrowindex];
             var id = Guid.Parse(selectedRow.Cells["Identificator"].Value.ToString());
-            MongoRepositoryController.Remove(id);
+            //MongoRepositoryController.Remove(id);
             dataGridView2.Rows.Remove(selectedRow);
             dataGridView2.Rows.Clear();
             this.ControllersForm_Load(sender, e);
