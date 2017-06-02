@@ -37,6 +37,7 @@
             this.реестрСнятияИУстановкиЭлектросчётчиковToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.актыПриемкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.оСовершенныхПоверкахToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.администрированиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -51,7 +52,7 @@
             this.button_add = new System.Windows.Forms.Button();
             this.button_update = new System.Windows.Forms.Button();
             this.button_remove = new System.Windows.Forms.Button();
-            this.оСовершенныхПоверкахToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.статистикаПоИсполнителямToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -127,10 +128,18 @@
             // отчетыToolStripMenuItem
             // 
             this.отчетыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.оСовершенныхПоверкахToolStripMenuItem});
+            this.оСовершенныхПоверкахToolStripMenuItem,
+            this.статистикаПоИсполнителямToolStripMenuItem});
             this.отчетыToolStripMenuItem.Name = "отчетыToolStripMenuItem";
             this.отчетыToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.отчетыToolStripMenuItem.Text = "Отчеты";
+            // 
+            // оСовершенныхПоверкахToolStripMenuItem
+            // 
+            this.оСовершенныхПоверкахToolStripMenuItem.Name = "оСовершенныхПоверкахToolStripMenuItem";
+            this.оСовершенныхПоверкахToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+            this.оСовершенныхПоверкахToolStripMenuItem.Text = "О совершенных поверках";
+            this.оСовершенныхПоверкахToolStripMenuItem.Click += new System.EventHandler(this.оСовершенныхПоверкахToolStripMenuItem_Click);
             // 
             // справкаToolStripMenuItem
             // 
@@ -243,12 +252,12 @@
             this.button_remove.UseVisualStyleBackColor = true;
             this.button_remove.Click += new System.EventHandler(this.button_delete_Click);
             // 
-            // оСовершенныхПоверкахToolStripMenuItem
+            // статистикаПоИсполнителямToolStripMenuItem
             // 
-            this.оСовершенныхПоверкахToolStripMenuItem.Name = "оСовершенныхПоверкахToolStripMenuItem";
-            this.оСовершенныхПоверкахToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.оСовершенныхПоверкахToolStripMenuItem.Text = "О совершенных поверках";
-            this.оСовершенныхПоверкахToolStripMenuItem.Click += new System.EventHandler(this.оСовершенныхПоверкахToolStripMenuItem_Click);
+            this.статистикаПоИсполнителямToolStripMenuItem.Name = "статистикаПоИсполнителямToolStripMenuItem";
+            this.статистикаПоИсполнителямToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+            this.статистикаПоИсполнителямToolStripMenuItem.Text = "Статистика по исполнителям";
+            this.статистикаПоИсполнителямToolStripMenuItem.Click += new System.EventHandler(this.статистикаПоИсполнителямToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -299,5 +308,6 @@
         private System.Windows.Forms.ToolStripMenuItem актыПриемкиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem администрированиеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оСовершенныхПоверкахToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem статистикаПоИсполнителямToolStripMenuItem;
     }
 }

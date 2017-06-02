@@ -3,25 +3,6 @@ using System.Diagnostics;
 
 namespace Diplom.Models
 {
-    public class Evnt
-    {
-        public Guid Id { get; set; }
-        public Guid AddressId { get; set; }
-
-
-        public CounterType CounterType { get; set; }
-
-    }
-
-    public class Data
-    {
-        public Guid Id { get; set; }
-        public Guid AddressId { get; set; }
-        public CounterType Type { get; set; }
-        public decimal CounterData { get; set; }
-        public DateTime Date { get; set; }
-    }
-
     /// <summary>
     /// Событие
     /// </summary>

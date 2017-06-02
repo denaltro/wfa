@@ -20,7 +20,30 @@ namespace Diplom
 
         private void button_search_Click(object sender, EventArgs e)
         {
-
+            if (string.IsNullOrEmpty(textBox1.Text))
+            {
+                dataGridView1.Rows.Clear();
+                var addressList = MongoRepositoryAddresses.GetAll();
+                var userList = MongoRepositoryUsers.GetAll();
+                foreach (var address in addressList)
+                {
+                    var user = userList.First(f => f.Id == address.UserId);
+                    dataGridView1.Rows.Add(address.Id, address.Street, address.House, address.Building,
+                        address.Apartment, user.Name);
+                }
+            }
+            else
+            {
+                dataGridView1.Rows.Clear();
+                var addressList = MongoRepositoryAddresses.Search(textBox1.Text);
+                var userList = MongoRepositoryUsers.GetAll();
+                foreach (var address in addressList)
+                {
+                    var user = userList.First(f => f.Id == address.UserId);
+                    dataGridView1.Rows.Add(address.Id, address.Street, address.House, address.Building,
+                        address.Apartment, user.Name);
+                }
+            }
         }
 
         private void button_add_Click(object sender, EventArgs e)

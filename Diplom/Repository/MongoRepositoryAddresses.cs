@@ -49,6 +49,7 @@ namespace Diplom.Repository
                 Query<Address>.EQ(a => a.Building, building),
                 Query<Address>.EQ(a => a.Apartment, apartment)
                 );
+
             var result = collection.FindOne(query);
             return result;
         }
@@ -65,6 +66,22 @@ namespace Diplom.Repository
         {
             var collection = MongoConnection.MongoCollectionAddresses;
             var query = Query<Address>.EQ(a => a.UserId, userId);
+            var result = collection.Find(query).ToList();
+            return result;
+        }
+
+        public static List<Address> Search(string search)
+        {
+            var collection = MongoConnection.MongoCollectionAddresses;
+            var query = Query<Address>.Matches(a => a.Street, new BsonRegularExpression(search, "i"));
+            var result = collection.Find(query).ToList();
+            return result;
+        }
+
+        public static List<Address> GetMany(List<Guid> addressIdList)
+        {
+            var collection = MongoConnection.MongoCollectionAddresses;
+            var query = Query<Address>.In(a => a.Id, addressIdList);
             var result = collection.Find(query).ToList();
             return result;
         }

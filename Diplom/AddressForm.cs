@@ -31,6 +31,7 @@ namespace Diplom
             {
                 comboBox_users.Items.Add(new ComboBoxItem(user.Name, user.Id));
             }
+            comboBox_users.SelectedIndex = 0;
 
             if (Address == null) return;
             textBox_street.Text = Address.Street;

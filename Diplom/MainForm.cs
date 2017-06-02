@@ -162,5 +162,10 @@ namespace Diplom
         {
             new oVerificationForm().ShowDialog();
         }
+
+        private void статистикаПоИсполнителямToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ReportImplementersForm().ShowDialog();
+        }
     }
 }
